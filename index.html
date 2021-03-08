@@ -9,13 +9,13 @@
   <body>
     <div id="app">
       <h2>ToDo List</h2>
-      <form v-on:submit.prevent> <!-- submitによる画面遷移の防止 -->
-        <input type="text" v-model="newItem"> <!-- 入力された値<=>data内newItem -->
+      <form v-on:submit.prevent>
+        <input type="text" v-model="newItem">
         <button v-on:click="addItem">Add</button>
       </form>
       <ul>
-        <li v-for="(todo, index) in todos"> <!-- todos配列内のtodo(value),index(key) -->
-          <input type="checkbox" v-model="todo.isDone"> <!-- checked <=> true -->
+        <li v-for="(todo, index) in todos">
+          <input type="checkbox" v-model="todo.isDone">
           <span v-bind:class="{ done:todo.isDone }">
             {{ todo.item }}
           </span>
